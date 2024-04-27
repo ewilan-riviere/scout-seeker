@@ -2,7 +2,7 @@
 
 [![rust][rust-version-src]][rust-version-href]
 
-Scout is a simple Rust CLI to scan a directory to list files and directories, recursively.
+Scout is a simple Rust CLI to scan a directory to list files, recursively.
 
 ## Usage
 
