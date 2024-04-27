@@ -34,5 +34,21 @@ Output file: /path/to/output.json
 }
 ```
 
+## Release
+
+```bash
+cargo build --release
+```
+
+Put the binary in your path:
+
+```bash
+cp target/release/scout /usr/local/bin
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 [rust-version-src]: https://img.shields.io/badge/Rust-v1.77.2-000000?colorA=18181B&logo=Rust&logoColor=ffffff
 [rust-version-href]: https://www.rust-lang.org/
