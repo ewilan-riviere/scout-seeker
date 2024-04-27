@@ -19,9 +19,10 @@ fn main() {
     // let directory_path = "/Volumes/library/video/movies_animation";
     // let directory_path = "/Volumes/library/video/tv_shows";
 
+    println!("Directory: {}", directory_path);
+
     let files = list_files_recursive(directory_path);
 
-    println!("Directory: {}", directory_path);
     println!("Time in seconds: {:?}", start.elapsed());
     println!("Total files: {}", files.len());
 
