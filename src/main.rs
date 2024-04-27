@@ -16,6 +16,7 @@ fn main() {
 
     let args: Vec<String> = env::args().collect();
     let directory_path = &args[1];
+    let output_file = "./output.json";
     // let directory_path = "/Volumes/library/video/movies_animation";
     // let directory_path = "/Volumes/library/video/tv_shows";
 
@@ -25,6 +26,7 @@ fn main() {
 
     println!("Time in seconds: {:?}", start.elapsed());
     println!("Total files: {}", files.len());
+    println!("Output file: {}", output_file);
 
     let file_list = FileList {
         path: directory_path.to_string(),
@@ -33,15 +35,14 @@ fn main() {
         files,
     };
 
-    to_json(&file_list);
+    to_json(&file_list, output_file);
 }
 
-fn to_json(file_list: &FileList) -> () {
+fn to_json(file_list: &FileList, output_file: &str) -> () {
     // Convert the struct to a JSON string
     let json_string = serde_json::to_string(&file_list).expect("Failed to serialize to JSON");
 
     // Write JSON string to a file
-    let output_file = "./output.json";
     fs::remove_file(output_file).unwrap_or_default();
     fs::write(output_file, json_string).expect("Failed to write to file");
 }

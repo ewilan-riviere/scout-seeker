@@ -20,6 +20,7 @@ cargo run /path/to/directory
 Directory: /path/to/directory
 Time in seconds: 3.123456
 Total files: 1234
+Output file: /path/to/output.json
 ```
 
 ### JSON output
