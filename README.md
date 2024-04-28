@@ -9,7 +9,11 @@ Scout is a simple [Rust](https://www.rust-lang.org/) CLI to scan a directory to 
 
 ## Usage
 
-You have to pass the directory to scan as an argument, and you can pass an output file with the `-o` option.
+You have to pass the directory to scan as an argument.
+
+Optional arguments:
+
+- `-o` or `--output`: to specify the output file, by default it will be `./output.json`.
 
 ```bash
 scout /path/to/directory -o=/path/to/output.json
