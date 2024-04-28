@@ -38,12 +38,16 @@ fn main() {
     let directory_path = matches.value_of("directory").unwrap();
     let output_file_path = matches.value_of("output").unwrap_or("./output.json");
 
-    println!("Directory: {}", directory_path);
+    println!("Scanning {} directory...", directory_path);
 
     let start = std::time::Instant::now();
     let date = chrono::Local::now().to_string();
     let files = list_files_recursive(directory_path);
 
+    println!("Scan completed!");
+
+    println!("");
+    println!("Directory: {}", directory_path);
     println!("Date: {:?}", date);
     println!("Time in seconds: {:?}", start.elapsed());
     println!("Total files: {}", files.len());
@@ -80,6 +84,16 @@ fn list_files_recursive(directory_path: &str) -> Vec<String> {
             if let Some(file_name) = entry.file_name().to_str() {
                 // Exclude files with names beginning with a dot
                 if file_name.starts_with('.') {
+                    continue;
+                }
+
+                // Exclude files with names ending with a tilde
+                if file_name.ends_with('~') {
+                    continue;
+                }
+
+                // Exclude files with directories contains a dot at beginning, like .git
+                if entry.path().display().to_string().contains("/.") {
                     continue;
                 }
 

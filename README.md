@@ -19,6 +19,8 @@ Optional arguments:
 scout /path/to/directory -o=/path/to/output.json
 ```
 
+Files with dots at the beginning of their names will be ignored, same for files into directories with dots at the beginning of their names.
+
 You will have an output, like this:
 
 ```bash
