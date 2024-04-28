@@ -1,6 +1,7 @@
 # Scout
 
 [![rust][rust-version-src]][rust-version-href]
+[![tests][tests-src]][tests-href]
 
 <!-- [![codecov][codecov-src]][codecov-href] -->
 
@@ -54,5 +55,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 [rust-version-src]: https://img.shields.io/badge/Rust-v1.77.2-000000?colorA=18181B&logo=Rust&logoColor=ffffff
 [rust-version-href]: https://www.rust-lang.org/
+[tests-src]: https://img.shields.io/github/actions/workflow/status/ewilan-riviere/scout/run-tests.yml?branch=main&label=tests&style=flat&colorA=18181B
+[tests-href]: https://github.com/ewilan-riviere/scout/actions
 [codecov-src]: https://img.shields.io/codecov/c/gh/ewilan-riviere/scout/main?style=flat&colorA=18181B&colorB=777BB4
 [codecov-href]: https://codecov.io/gh/ewilan-riviere/scout
