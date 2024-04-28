@@ -55,6 +55,8 @@ cargo run /path/to/directory
 
 ## Release
 
+Build the release version:
+
 ```bash
 cargo build --release
 ```
