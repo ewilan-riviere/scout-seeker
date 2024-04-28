@@ -3,6 +3,8 @@ use std::env;
 use std::fs;
 use walkdir::WalkDir;
 
+pub mod test;
+
 #[derive(Serialize)]
 struct FileList {
     path: String,
