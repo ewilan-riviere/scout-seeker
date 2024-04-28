@@ -13,7 +13,7 @@ Scout is a simple [Rust](https://www.rust-lang.org/) CLI to scan a directory to 
 scout /path/to/directory
 ```
 
-### Output
+You will have an output, like this:
 
 ```bash
 Directory: /path/to/directory
@@ -22,7 +22,7 @@ Total files: 1234
 Output file: /path/to/output.json
 ```
 
-#### JSON output
+And an output file, like this:
 
 ```json
 {
