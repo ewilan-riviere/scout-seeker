@@ -13,6 +13,26 @@ Scout is a simple [Rust](https://www.rust-lang.org/) CLI to scan a directory to 
 scout /path/to/directory
 ```
 
+### Output
+
+```bash
+Directory: /path/to/directory
+Time in seconds: 3.123456
+Total files: 1234
+Output file: /path/to/output.json
+```
+
+#### JSON output
+
+```json
+{
+  "path": "/path/to/directory",
+  "time_seconds": "3.123456",
+  "total_files": 1234,
+  "files": ["/path/to/directory/file1.txt", "/path/to/directory/file2.txt"]
+}
+```
+
 ## Build
 
 To build, you have to install [Rust](https://www.rust-lang.org/), you can follow [this guide](https://gist.github.com/ewilan-riviere/6a0b8aab2e347164e73feab83c862e99).
@@ -23,26 +43,6 @@ cargo build
 
 ```bash
 cargo run /path/to/directory
-```
-
-## Output
-
-```bash
-Directory: /path/to/directory
-Time in seconds: 3.123456
-Total files: 1234
-Output file: /path/to/output.json
-```
-
-### JSON output
-
-```json
-{
-  "path": "/path/to/directory",
-  "time_seconds": "3.123456",
-  "total_files": 1234,
-  "files": ["/path/to/directory/file1.txt", "/path/to/directory/file2.txt"]
-}
 ```
 
 ## Release
