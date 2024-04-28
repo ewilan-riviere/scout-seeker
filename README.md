@@ -2,6 +2,8 @@
 
 [![rust][rust-version-src]][rust-version-href]
 
+<!-- [![codecov][codecov-src]][codecov-href] -->
+
 Scout is a simple [Rust](https://www.rust-lang.org/) CLI to scan a directory to list files, recursively.
 
 ## Usage
@@ -52,3 +54,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 [rust-version-src]: https://img.shields.io/badge/Rust-v1.77.2-000000?colorA=18181B&logo=Rust&logoColor=ffffff
 [rust-version-href]: https://www.rust-lang.org/
+[codecov-src]: https://img.shields.io/codecov/c/gh/ewilan-riviere/scout/main?style=flat&colorA=18181B&colorB=777BB4
+[codecov-href]: https://codecov.io/gh/ewilan-riviere/scout
