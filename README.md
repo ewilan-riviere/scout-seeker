@@ -9,14 +9,17 @@ Scout is a simple [Rust](https://www.rust-lang.org/) CLI to scan a directory to 
 
 ## Usage
 
+You have to pass the directory to scan as an argument, and you can pass an output file with the `-o` option.
+
 ```bash
-scout /path/to/directory
+scout /path/to/directory -o=/path/to/output.json
 ```
 
 You will have an output, like this:
 
 ```bash
 Directory: /path/to/directory
+Date: "2024-04-28 10:07:12.081879 +02:00"
 Time in seconds: 3.123456
 Total files: 1234
 Output file: /path/to/output.json
@@ -27,6 +30,7 @@ And an output file, like this:
 ```json
 {
   "path": "/path/to/directory",
+  "date": "2024-04-28 10:07:12.081879 +02:00",
   "time_seconds": "3.123456",
   "total_files": 1234,
   "files": ["/path/to/directory/file1.txt", "/path/to/directory/file2.txt"]

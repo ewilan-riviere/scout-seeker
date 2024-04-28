@@ -1,5 +1,5 @@
+use clap::{App, Arg};
 use serde::Serialize;
-use std::env;
 use std::fs;
 use walkdir::WalkDir;
 
@@ -8,36 +8,56 @@ pub mod test;
 #[derive(Serialize)]
 struct FileList {
     path: String,
+    date: String,
     time_seconds: String,
     total_files: usize,
     files: Vec<String>,
 }
 
 fn main() {
-    let start = std::time::Instant::now();
+    let matches = App::new("Scout")
+        .version("0.1.0")
+        .author("Ewilan Rivière")
+        .about("Scout is a simple Rust CLI to scan a directory to list files, recursively.")
+        .arg(
+            Arg::with_name("directory")
+                .help("Sets the directory to list files from")
+                .required(true)
+                .index(1),
+        )
+        .arg(
+            Arg::with_name("output")
+                .short('o')
+                .long("output")
+                .value_name("FILE")
+                .help("Sets the output file path as JSON, default is './output.json'")
+                .takes_value(true),
+        )
+        .get_matches();
 
-    let args: Vec<String> = env::args().collect();
-    let directory_path = &args[1];
-    let output_file = "./output.json";
-    // let directory_path = "/Volumes/library/video/movies_animation";
-    // let directory_path = "/Volumes/library/video/tv_shows";
+    let directory_path = matches.value_of("directory").unwrap();
+    let output_file_path = matches.value_of("output").unwrap_or("./output.json");
 
     println!("Directory: {}", directory_path);
 
+    let start = std::time::Instant::now();
+    let date = chrono::Local::now().to_string();
     let files = list_files_recursive(directory_path);
 
+    println!("Date: {:?}", date);
     println!("Time in seconds: {:?}", start.elapsed());
     println!("Total files: {}", files.len());
-    println!("Output file: {}", output_file);
+    println!("Output file: {}", output_file_path);
 
     let file_list = FileList {
         path: directory_path.to_string(),
+        date: date,
         time_seconds: start.elapsed().as_secs().to_string(),
         total_files: files.len(),
         files,
     };
 
-    to_json(&file_list, output_file);
+    to_json(&file_list, output_file_path);
 }
 
 fn to_json(file_list: &FileList, output_file: &str) -> () {
