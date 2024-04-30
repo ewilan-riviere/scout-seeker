@@ -19,8 +19,6 @@ Optional arguments:
 scout /path/to/directory -o=/path/to/output.json
 ```
 
-Files with dots at the beginning of their names will be ignored, same for files into directories with dots at the beginning of their names.
-
 You will have an output, like this:
 
 ```bash
@@ -42,6 +40,11 @@ And an output file, like this:
   "files": ["/path/to/directory/file1.txt", "/path/to/directory/file2.txt"]
 }
 ```
+
+### Files excluded
+
+- Files with dots at the beginning of their names, like `.gitignore`.
+- Files into directories with dots at the beginning of their names, like `.git/HEAD`.
 
 ## Build
 
