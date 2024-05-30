@@ -9,6 +9,10 @@
 
 Scout is a simple [Rust](https://www.rust-lang.org/) CLI to scan a directory to list files, recursively.
 
+## Download
+
+You can download `scout` from the [releases page](https://github.com/ewilan-riviere/scout/releases/latest).
+
 ## Usage
 
 You have to pass the directory to scan as an argument.
