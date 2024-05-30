@@ -1,5 +1,7 @@
 # Scout
 
+![Banner with large array and scout title](https://raw.githubusercontent.com/ewilan-riviere/scout/main/docs/banner.jpg)
+
 [![rust][rust-version-src]][rust-version-href]
 [![tests][tests-src]][tests-href]
 
