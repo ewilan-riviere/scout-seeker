@@ -6,6 +6,7 @@ mod tests {
         let files = list_files_recursive("./src");
         println!("{:?}", files);
         assert_eq!(files.len(), 2);
-        assert_eq!(files, vec!["./src/test.rs", "./src/main.rs"]);
+        assert!(files.contains(&"./src/test.rs".to_string()));
+        assert!(files.contains(&"./src/main.rs".to_string()));
     }
 }
