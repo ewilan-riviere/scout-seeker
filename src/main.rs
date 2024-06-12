@@ -16,7 +16,7 @@ struct FileList {
 
 fn main() {
     let matches = App::new("Scout")
-        .version("0.1.10")
+        .version(env!("CARGO_PKG_VERSION"))
         .author("Ewilan Rivière")
         .about("Scout is a simple Rust CLI to scan a directory to list files, recursively.")
         .arg(
