@@ -80,6 +80,7 @@ Clone repository:
 
 ```bash
 git clone https://github.com/ewilan-riviere/scout.git
+cd scout
 ```
 
 To build, you have to install [Rust](https://www.rust-lang.org/), you can follow [this guide](https://gist.github.com/ewilan-riviere/6a0b8aab2e347164e73feab83c862e99).
