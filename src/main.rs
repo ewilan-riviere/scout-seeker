@@ -33,35 +33,93 @@ fn main() {
                 .help("Sets the output file path as JSON, default is './output.json'")
                 .takes_value(true),
         )
+        .arg(
+            Arg::new("verbose")
+                .short('v')
+                .long("verbose")
+                .help("Enables verbose mode")
+                .takes_value(false),
+        )
+        .arg(
+            Arg::new("print")
+                .short('p')
+                .long("print")
+                .help("Prints the list of files to the console, this option will clear all other console outputs")
+                .takes_value(false),
+        )
         .get_matches();
 
     let directory_path = matches.value_of("directory").unwrap();
-    let output_file_path = matches.value_of("output").unwrap_or("./output.json");
+    let current_dir = std::env::current_dir().unwrap();
+    let default_json_path = format!("{}/output.json", current_dir.display());
 
-    println!("Scanning {} directory...", directory_path);
+    let output_file_path = matches.value_of("output").unwrap_or(&default_json_path);
+    if !output_file_path.ends_with(".json") {
+        println!("Output file must be a JSON file.");
+        return;
+    }
+
+    let verbose = matches.is_present("verbose");
+    let print = matches.is_present("print");
+
+    if !print {
+        const VERSION: &str = env!("CARGO_PKG_VERSION");
+        println!("scout v{}", VERSION);
+    }
+
+    if verbose && !print {
+        println!("");
+        println!("Scanning {} directory...", directory_path);
+    }
+
+    // check if the directory exists
+    if !std::path::Path::new(directory_path).exists() {
+        println!("Directory does not exist.");
+        return;
+    }
+
+    // check if permission is granted
+    if !std::path::Path::new(directory_path).is_dir() {
+        println!("Permission denied.");
+        return;
+    }
 
     let start = std::time::Instant::now();
     let date = chrono::Local::now().to_string();
     let files = list_files_recursive(directory_path);
 
-    println!("Scan completed!");
+    if verbose && !print {
+        println!("Scan completed!");
 
-    println!("");
-    println!("Directory: {}", directory_path);
-    println!("Date: {:?}", date);
-    println!("Time in seconds: {:?}", start.elapsed());
-    println!("Total files: {}", files.len());
-    println!("Output file: {}", output_file_path);
+        println!("");
+        println!("Directory: {}", directory_path);
+        println!("Date: {:?}", date);
+        println!("Time in seconds: {:?}", start.elapsed());
+        println!("Total files: {}", files.len());
+    }
 
-    let file_list = FileList {
-        path: directory_path.to_string(),
-        date: date,
-        time_seconds: start.elapsed().as_secs().to_string(),
-        total_files: files.len(),
-        files,
-    };
+    if !print {
+        println!("");
+        println!("Output file: {}", output_file_path);
+    }
 
-    to_json(&file_list, output_file_path);
+    if print {
+        for file in &files {
+            println!("{}", file);
+        }
+    }
+
+    if !print {
+        let file_list = FileList {
+            path: directory_path.to_string(),
+            date: date,
+            time_seconds: start.elapsed().as_secs().to_string(),
+            total_files: files.len(),
+            files,
+        };
+
+        to_json(&file_list, output_file_path);
+    }
 }
 
 fn to_json(file_list: &FileList, output_file: &str) -> () {

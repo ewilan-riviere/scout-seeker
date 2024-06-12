@@ -20,9 +20,11 @@ You have to pass the directory to scan as an argument.
 Optional arguments:
 
 - `-o` or `--output`: to specify the output file, by default it will be `./output.json`.
+- `-v` or `--verbose`: to display more information in the terminal.
+- `-p` or `--print`: to print the output in the terminal (this will disable the output file and verbose).
 
 ```bash
-scout /path/to/directory -o=/path/to/output.json
+scout /path/to/directory -o=/path/to/output.json -v
 ```
 
 You will have an output, like this:
@@ -45,6 +47,26 @@ And an output file, like this:
   "total_files": 1234,
   "files": ["/path/to/directory/file1.txt", "/path/to/directory/file2.txt"]
 }
+```
+
+#### Print
+
+If you want to print the output in the terminal, you can use the `-p` or `--print` argument.
+
+```bash
+scout /path/to/directory -p
+```
+
+You will have an output, like this:
+
+```bash
+tests/data/file-3.md
+tests/data/file-2.md
+tests/data/file.jpg
+tests/data/file.mkv
+tests/data/file-1.md
+tests/data/nested/file-nested-2.md
+tests/data/nested/file-nested-1.md
 ```
 
 ### Files excluded
