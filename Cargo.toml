@@ -1,6 +1,6 @@
 [package]
 name = "scout"
-version = "0.2.10"
+version = "0.2.11"
 edition = "2021"
 license = "MIT"
 description = "Scout is a simple Rust CLI to scan a directory to list files, recursively."
