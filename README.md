@@ -9,9 +9,13 @@
 
 scout-seeker is a simple [Rust](https://www.rust-lang.org/) CLI to scan a directory to list files, recursively.
 
-## Download
+## Installation
 
-You can download `scout-seeker` from the [releases page](https://github.com/ewilan-riviere/scout-seeker/releases/latest).
+You can install `scout-seeker` with [Cargo](https://doc.rust-lang.org/cargo/).
+
+```bash
+cargo install scout-seeker
+```
 
 ## Usage
 
