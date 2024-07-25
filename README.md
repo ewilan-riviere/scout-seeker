@@ -1,17 +1,17 @@
-# Scout
+# scout-seeker
 
-![Banner with large array and scout title](https://raw.githubusercontent.com/ewilan-riviere/scout/main/docs/banner.jpg)
+![Banner with large array and scout-seeker title](https://raw.githubusercontent.com/ewilan-riviere/scout-seeker/main/docs/banner.jpg)
 
 [![rust][rust-version-src]][rust-version-href]
 [![tests][tests-src]][tests-href]
 
 <!-- [![codecov][codecov-src]][codecov-href] -->
 
-Scout is a simple [Rust](https://www.rust-lang.org/) CLI to scan a directory to list files, recursively.
+scout-seeker is a simple [Rust](https://www.rust-lang.org/) CLI to scan a directory to list files, recursively.
 
 ## Download
 
-You can download `scout` from the [releases page](https://github.com/ewilan-riviere/scout/releases/latest).
+You can download `scout-seeker` from the [releases page](https://github.com/ewilan-riviere/scout-seeker/releases/latest).
 
 ## Usage
 
@@ -24,7 +24,7 @@ Optional arguments:
 - `-p` or `--print`: to print the output in the terminal (this will disable the output file and verbose).
 
 ```bash
-scout /path/to/directory -o=/path/to/output.json -v
+scout-seeker /path/to/directory -o=/path/to/output.json -v
 ```
 
 You will have an output, like this:
@@ -54,7 +54,7 @@ And an output file, like this:
 If you want to print the output in the terminal, you can use the `-p` or `--print` argument.
 
 ```bash
-scout /path/to/directory -p
+scout-seeker /path/to/directory -p
 ```
 
 You will have an output, like this:
@@ -79,8 +79,8 @@ tests/data/nested/file-nested-1.md
 Clone repository:
 
 ```bash
-git clone https://github.com/ewilan-riviere/scout.git
-cd scout
+git clone https://github.com/ewilan-riviere/scout-seeker.git
+cd scout-seeker
 ```
 
 To build, you have to install [Rust](https://www.rust-lang.org/), you can follow [this guide](https://gist.github.com/ewilan-riviere/6a0b8aab2e347164e73feab83c862e99).
@@ -104,7 +104,7 @@ cargo build --release
 Put the binary in your path:
 
 ```bash
-cp target/release/scout /usr/local/bin
+cp target/release/scout-seeker /usr/local/bin
 ```
 
 ## Tests
@@ -121,7 +121,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 [rust-version-src]: https://img.shields.io/badge/Rust-v1.77.2-000000?colorA=18181B&logo=Rust&logoColor=ffffff
 [rust-version-href]: https://www.rust-lang.org/
-[tests-src]: https://img.shields.io/github/actions/workflow/status/ewilan-riviere/scout/run-tests.yml?branch=main&label=tests&style=flat&colorA=18181B
-[tests-href]: https://github.com/ewilan-riviere/scout/actions
-[codecov-src]: https://img.shields.io/codecov/c/gh/ewilan-riviere/scout/main?style=flat&colorA=18181B&colorB=777BB4
-[codecov-href]: https://codecov.io/gh/ewilan-riviere/scout
+[tests-src]: https://img.shields.io/github/actions/workflow/status/ewilan-riviere/scout-seeker/run-tests.yml?branch=main&label=tests&style=flat&colorA=18181B
+[tests-href]: https://github.com/ewilan-riviere/scout-seeker/actions
+[codecov-src]: https://img.shields.io/codecov/c/gh/ewilan-riviere/scout-seeker/main?style=flat&colorA=18181B&colorB=777BB4
+[codecov-href]: https://codecov.io/gh/ewilan-riviere/scout-seeker

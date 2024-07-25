@@ -15,10 +15,10 @@ struct FileList {
 }
 
 fn main() {
-    let matches = App::new("Scout")
+    let matches = App::new("scout-seeker")
         .version(env!("CARGO_PKG_VERSION"))
         .author("Ewilan Rivière")
-        .about("Scout is a simple Rust CLI to scan a directory to list files, recursively.")
+        .about("scout-seeker is a simple Rust CLI to scan a directory to list files, recursively.")
         .arg(
             Arg::with_name("directory")
                 .help("Sets the directory to list files from")
@@ -64,7 +64,7 @@ fn main() {
 
     if !print {
         const VERSION: &str = env!("CARGO_PKG_VERSION");
-        println!("scout v{}", VERSION);
+        println!("scout-seeker v{}", VERSION);
     }
 
     if verbose && !print {

@@ -232,7 +232,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "scout"
+name = "scout-seeker"
 version = "0.2.11"
 dependencies = [
  "chrono",

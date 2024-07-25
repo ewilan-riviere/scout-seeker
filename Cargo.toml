@@ -1,11 +1,11 @@
 [package]
-name = "scout"
+name = "scout-seeker"
 version = "0.2.11"
 edition = "2021"
 license = "MIT"
-description = "Scout is a simple Rust CLI to scan a directory to list files, recursively."
-homepage = "https://github.com/ewilan-riviere/scout"
-repository = "https://github.com/ewilan-riviere/scout"
+description = "scout-seeker is a simple Rust CLI to scan a directory to list files, recursively."
+homepage = "https://github.com/ewilan-riviere/scout-seeker"
+repository = "https://github.com/ewilan-riviere/scout-seeker"
 readme = "README.md"
 keywords = ["filesystem"]
 
