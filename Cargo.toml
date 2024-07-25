@@ -2,6 +2,12 @@
 name = "scout"
 version = "0.2.10"
 edition = "2021"
+license = "MIT"
+description = "Scout is a simple Rust CLI to scan a directory to list files, recursively."
+homepage = "https://github.com/ewilan-riviere/scout"
+repository = "https://github.com/ewilan-riviere/scout"
+readme = "README.md"
+keywords = ["filesystem"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
