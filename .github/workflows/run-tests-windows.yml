@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@4
+        uses: actions/checkout@3
 
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
