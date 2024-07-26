@@ -14,14 +14,19 @@ jobs:
       fail-fast: true
       matrix:
         os: [ubuntu-latest, windows-latest]
-        rust: [nightly]
         stability: [prefer-stable]
 
-    name: Rust ${{ matrix.rust }} - ${{ matrix.stability }} - ${{ matrix.os }}
+    name: Rust ${{ matrix.rust }} - ${{ matrix.os }}
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: nightly
+          override: true
 
       - name: Build
         run: cargo build --verbose
