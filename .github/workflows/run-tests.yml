@@ -1,4 +1,4 @@
-name: Rust
+name: Tests on unix
 
 on:
   push:
@@ -14,13 +14,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions-rs/toolchain@v1
+      - name: Checkout code
+        uses: actions/checkout@4
+
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
         with:
           toolchain: nightly
           override: true
+
       - name: Build
         run: cargo build --verbose
+
       - name: Run tests
         run: cargo test --verbose
         env:
