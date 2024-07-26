@@ -17,7 +17,7 @@ jobs:
         rust: [nightly]
         stability: [prefer-stable]
 
-    name: P${{ matrix.php }} - ${{ matrix.stability }} - ${{ matrix.os }}
+    name: Rust ${{ matrix.rust }} - ${{ matrix.stability }} - ${{ matrix.os }}
 
     steps:
       - name: Checkout code
